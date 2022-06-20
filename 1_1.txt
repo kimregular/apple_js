@@ -1,0 +1,41 @@
+document 
+html 문서 의미
+
+.
+~의 
+
+Element 
+html 문서의 요소
+
+getElementById()
+이런 함수들을 셀렉터라고 부른다.
+
+js 관련 검색을 했을 때 $가 붙은 코드가 나온다면
+제이쿼리 관련 문법이다.
+
+모든 js에는 onclick 속성을 사용할 수 있다.
+
+
+--------------------
+기본적인 UI만드는 규칙
+1. html/css로 미리 구현하고 평소에는 숨긴다.
+2. 버튼을 누르거나 할경우 ui가 보여지도록 js 코드를 작성한다.
+--------------------
+
+
+긴 코드를 축약하려면 function 문법을 사용한다.
+
+
+html 파일을 읽을 때 위부터 읽기 떄문에 js는 body 아래에 작성한다.
+
+ID 셀렉터가 싫다면 class 셀렉터를 사용하면 된다.
+다만 클래스는 중복이 허용되므로 인덱싱을 해야한다.
+
+addEventListener()를 사용하면 onclick()없이도 함수를 실행할 수 있다.
+document.getElementById("close").addEventListener('event', function(){});
+형식으로 작성한다.
+function()은 addEventListener()의 파라미터로 추가되었다. 따라서 이름이 필요없다.
+파라미터 자리로 들어온 함수를 콜백함수라고 부른다. -> 순차적으로 실행하고 싶을 때 사용
+
+event는 유저가 웹페이지에 조작하는 것을 의미
+click, scroll, mouseover, keydown 등등

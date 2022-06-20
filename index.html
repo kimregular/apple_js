@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="main.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="alert-box" id="alert">
+            <p class="title">알림창입니다.</p>
+            <button id="close">close</button>
+        </div>
+
+        <button onclick="askOrder('Plz enter the ID')">Button1</button>
+        <button onclick="askOrder('Plz enter the Password')">Button2</button>
+    </body>
+    <script>
+        document.getElementById("close").addEventListener("click", function () {
+            document.getElementById("alert").style.display = "none";
+        });
+        // function operateModal(operate) {
+        //     document.getElementById("alert").style.display = operate;
+        // }
+
+        function askOrder(order) {
+            document.getElementsByClassName("title")[0].innerHTML = order;
+            document.getElementById("alert").style.display = "block";
+        }
+    </script>
+</html>
