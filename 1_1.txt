@@ -39,3 +39,28 @@ function()은 addEventListener()의 파라미터로 추가되었다. 따라서 �
 
 event는 유저가 웹페이지에 조작하는 것을 의미
 click, scroll, mouseover, keydown 등등
+
+버튼을 눌렀을 때 원하는 요소에 클래스 추가하기
+(스타일도 동시에 주고싶을 경우 유용한 방식)
+셀렉터로 요소를 찾고 classList.add() 함수 사용
+반대로는 remove() 사용
+
+
+document.getElementsByClassName()[0].classList.add()
+처럼 사용
+
+버튼을 한 번 더 누르면 다시 사라지게 만들기!
+add / remove 따로 작성하는 것이 아니라 toggle()함수 사용
+document.getElementsByClassName()[0].classList.toggle()
+처럼 사용
+
+쿼리 셀렉터
+getElementById()
+getElementsByClassName()
+이 방식이 아니라 다른 방법도 있다. css 셀렉터 문법 사용 가능
+document.querySelector();
+css 셀렉터 문법이므로 '.something'/'#something' 처럼 사용해야한다. (클래스/id)
+
+클래스나 아이디가 중복으로 되어있다면 가장 위에 위치한 요소만 출력해준다.
+특정 위치의 중복요소를 출력하려면 querySelectorAll() 사용
+그리고 인덱싱을 해준다.

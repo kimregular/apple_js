@@ -1,0 +1,44 @@
+자바스크립트 코드는 너무 길다
+react, Vue, JQuery 를 사용하면 html 조작을 쉽게 할 수 있다.
+
+지금은 JQuery를 사용하도록 하겠다.
+
+JQuery
+JQuery는 자바스크립트의 긴 함수들(querySelector, addEventListener 등)의 이름을
+짧게 바꿔주는 '라이브러리' 이다.
+굳이 싫다면 자바스크립트 쓰면 된다.
+
+JQuery 설치
+JQuery cdn 이라고 검색한 뒤 script 태그를 찾아서 붙여넣기 한다.
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+이 코드를 작성한 '아래부터' jquery 코드를 사용할 수 있다.
+
+셀렉터
+$ 표시로 셀렉터를 사용한다.
+$('.hello').html('뭘봐');
+이렇게 사용하면 클래스가 hello인 요소의 html을 '뭘봐'로 바꿔준다.
+
+jquery로 스타일 변경
+$('.hello').css('color','red');
+hello 클래스의 글자색을 빨간색으로 변경한다.
+
+jquery로 클래스 추가/제거
+$('.hello').addClass('클래스명');
+$('.hello').removeClass('클래스명');
+$('.hello').toggleClass('클래스명');
+js의 classList() 사용하지 않고 addClass, removeClass, toggleClass 사용
+
+이벤트리스터
+js의 addEventListener()는
+jquery 에서 on 으로 사용한다.
+
+$("test-btn").on('click', function(){
+    ~~~~
+}); 처럼 사용하면 된다.
+
+one-way 애니메이션 만드는 단계
+1. 시작스타일 설정(class ex: .start)
+2. 최종스타일 설정(class ex: .end)
+3. js로 트리거 설정
+4. 시작스타일에 transition 속성 설정
