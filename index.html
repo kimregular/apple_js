@@ -29,10 +29,14 @@
                 <h4>로그인하세요</h4>
                 <form action="success.html">
                     <div class="my-3">
-                        <input type="text" class="form-control" />
+                        <input type="text" class="form-control" id="email" />
                     </div>
                     <div class="my-3">
-                        <input type="password" class="form-control" />
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="passwrd"
+                        />
                     </div>
                     <button type="submit" class="btn btn-primary" id="send">
                         전송
@@ -46,11 +50,52 @@
 
         <script>
             $("form").on("submit", function () {
-                var inputValLen = $(".form-control").value.length;
-                if (inputValLen < 1) {
+                if (document.getElementById("email").value == "") {
                     alert("NO!");
+                } else if (
+                    document.getElementById("passwrd").value == "" ||
+                    document.getElementById("passwrd").value.length < 6
+                ) {
+                    alert("NO!");
+                }
+            });
+
+            function the_369(num) {
+                var last = Number(String(num).slice(-1));
+                console.log(last);
+                if (last % 9 == 0) {
+                    console.log("clap");
+                    console.log("clap");
+                } else if (last % 3 == 0) {
+                    console.log("clap");
                 } else {
-                    alert("good!");
+                    console.log("pass");
+                }
+            }
+
+            function the_test(num1, num2) {
+                if (num1 < 0 || num1 > 100 || num2 < 0 || num2 > 100) {
+                    alert("don't fool me around!");
+                } else if (num1 < 40 || num2 < 40) {
+                    console.log("fail");
+                } else if (num1 + num2 < 120) {
+                    console.log("fail");
+                } else {
+                    console.log("pass");
+                }
+            }
+        </script>
+
+        <span class="badge bg-dark">Dark 🔄</span>
+
+        <script>
+            var cnt = 0;
+            $(".badge").on("click", function () {
+                cnt += 1;
+                if (cnt % 2 == 0) {
+                    $(".badge").html("dark");
+                } else {
+                    $(".badge").html("light");
                 }
             });
         </script>

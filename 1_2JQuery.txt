@@ -42,3 +42,19 @@ one-way 애니메이션 만드는 단계
 2. 최종스타일 설정(class ex: .end)
 3. js로 트리거 설정
 4. 시작스타일에 transition 속성 설정
+
+변수의 선언과 할당
+선언
+var 나이;
+var 이름;
+할당
+나이=20;
+이름='kim'
+
+var, let, const
+let, const -> 재선언 불가능
+재선언시 에러
+const -> 재할당 불가능
+재할당시 에러 : 상수에 사용
+
+
