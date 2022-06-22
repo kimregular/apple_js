@@ -1,0 +1,14 @@
+
+setTimeout()
+x초 후에 코드를 실행한다.
+setTimeout(function(), 기다릴 시간);
+시간은 ms 단위로 적으면 된다. (1초 == 1000)
+
+ex)
+setTimeout(function{
+    console.log('hi')
+    }, 1000);
+1초 후 hi를 출력한다.
+
+setInterval(function(), 기다릴 시간);
+x초 마다 함수를 실행시켜준다.

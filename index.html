@@ -141,6 +141,41 @@
                         .classList.toggle("show");
                 });
         </script>
+        <p>태조 이성계가 태어난 년도는?</p>
+        <input type="text" id="answer" />
+        <button id="send-answer">제출</button>
+
+        <script>
+            let fail = 0;
+            $("#send-answer").on("click", function () {
+                if ($("#answer").val() == 1335) {
+                    alert("smart!");
+                } else {
+                    fail += 1;
+                    if (fail % 3 == 0) {
+                        alert("you fool!");
+                    }
+                }
+            });
+        </script>
+
+        <div class="alert alert-danger" id="timer">
+            <span class="time">5</span>초 이내 구입시 사은품 증정!
+        </div>
+
+        <script>
+            var cnt = 5;
+            setInterval(function () {
+                if (cnt >= 0) {
+                    cnt -= 1;
+                    document.getElementsByClassName("time")[0].innerHTML = cnt;
+                }
+                if (cnt < 0) {
+                    document.getElementById("timer").classList.add("gone");
+                }
+            }, 1000);
+        </script>
+
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
