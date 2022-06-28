@@ -166,8 +166,8 @@
         <button class="slide-1">1</button>
         <button class="slide-2">2</button>
         <button class="slide-3">3</button>
-        <button class="slide-back">이전</button>
-        <button class="slide-forward">다음</button>
+        <button class="slide-next">다음</button>
+        <button class="slide-before">이전</button>
 
         <script>
             $(".slide-1").on("click", function () {
@@ -179,17 +179,43 @@
             $(".slide-3").on("click", function () {
                 $(".slide-container").css("transform", "translateX(-200vw)");
             });
-            $(".slide-back").on("click", function () {
-                $(".slide-container").css(
-                    "transform",
-                    "translateX(-" + 100 + "vw)"
-                );
+
+            var nPage = 1;
+            $(".slide-next").on("click", function () {
+                if (nPage == 1) {
+                    nPage += 1;
+                    $(".slide-container").css(
+                        "transform",
+                        "translateX(-100vw)"
+                    );
+                } else if (nPage == 2) {
+                    nPage += 1;
+                    $(".slide-container").css(
+                        "transform",
+                        "translateX(-200vw)"
+                    );
+                } else {
+                    nPage = 1;
+                    $(".slide-container").css("transform", "translateX(0vw)");
+                }
             });
-            $(".slide-forward").on("click", function () {
-                $(".slide-container").css(
-                    "transform",
-                    "translateX( +" + 100 + "vw)"
-                );
+            $(".slide-before").on("click", function () {
+                if (nPage == 3) {
+                    nPage -= 1;
+                    $(".slide-container").css(
+                        "transform",
+                        "translateX(-100vw)"
+                    );
+                } else if (nPage == 2) {
+                    nPage -= 1;
+                    $(".slide-container").css("transform", "translateX(0vw)");
+                } else {
+                    nPage = 3;
+                    $(".slide-container").css(
+                        "transform",
+                        "translateX(-200vw)"
+                    );
+                }
             });
         </script>
 
@@ -226,6 +252,28 @@
                     document.getElementById("timer").classList.add("gone");
                 }
             }, 1000);
+
+            function msCon(a, b) {
+                return (a * 60 + b) * 1000;
+            }
+
+            var a = msCon(1, 30);
+            var b = msCon(2, 10);
+            console.log(a);
+            console.log(b);
+
+            function saleFor(a, b) {
+                if (!b) {
+                    return a * 0.9;
+                } else {
+                    return a * 0.9 - 1.5;
+                }
+            }
+            var c = saleFor(70, false);
+            var d = saleFor(10, true);
+
+            console.log(c);
+            console.log(d);
         </script>
 
         <script
