@@ -24,6 +24,36 @@
         <title>Hello, world!</title>
     </head>
     <body>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand">Navbar</span>
+
+                <span class="badge bg-dark mx-3 ms-auto">Dark 🔄</span>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="prog"></div>
+
+        <script>
+            // $(window).on("scroll", function () {
+            //     if ($(window).scrollTop() < 100) {
+            //         $(".navbar-brand").removeClass("scroll-small");
+            //     } else {
+            //         $(".navbar-brand").addClass("scroll-small");
+            //     }
+            // });
+
+            $(window).on("scroll", function () {
+                if ($(window).scrollTop() < 100) {
+                    $(".navbar-brand").css("font-size", "30px");
+                } else {
+                    $(".navbar-brand").css("font-size", "20px");
+                }
+            });
+        </script>
+
         <div class="black-bg">
             <div class="white-bg">
                 <h4>로그인하세요</h4>
@@ -55,6 +85,13 @@
         </div>
 
         <script>
+            document
+                .querySelector(".navbar-toggler")
+                .addEventListener("click", function () {
+                    document
+                        .querySelectorAll(".list-group")[0]
+                        .classList.toggle("show");
+                });
             $("form").on("submit", function (e) {
                 var emailVal = document.getElementById("email").value;
                 var passVal = document.getElementById("passwrd").value;
@@ -95,30 +132,17 @@
             }
         </script>
 
-        <span class="badge bg-dark">Dark 🔄</span>
-
         <script>
             var cnt = 0;
             $(".badge").on("click", function () {
                 cnt += 1;
                 if (cnt % 2 == 0) {
-                    $(".badge").html("dark");
+                    $(".badge").html("dark 🔄");
                 } else {
-                    $(".badge").html("light");
+                    $(".badge").html("light 🔄");
                 }
             });
         </script>
-
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-                <span class="navbar-brand">Navbar</span>
-                <button class="navbar-toggler" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-
-        <button class="btn btn-danger" id="open">open</button>
 
         <ul class="list-group">
             <li class="list-group-item">An item</li>
@@ -133,23 +157,7 @@
             <button id="login" class="btn btn-danger">login</button>
         </div>
 
-        <script>
-            $("#open").on("click", function () {
-                $(".black-bg").addClass("show-modal");
-            });
-
-            $("#close").on("click", function () {
-                $(".black-bg").removeClass("show-modal");
-            });
-
-            document
-                .querySelector(".navbar-toggler")
-                .addEventListener("click", function () {
-                    document
-                        .querySelectorAll(".list-group")[0]
-                        .classList.toggle("show");
-                });
-        </script>
+        <script></script>
         <div style="overflow: hidden">
             <div class="slide-container">
                 <div class="slide-box">
@@ -169,7 +177,27 @@
         <button class="slide-next">다음</button>
         <button class="slide-before">이전</button>
 
+        <button class="btn btn-danger" id="open">open</button>
+
         <script>
+            document
+                .querySelector(".black-bg")
+                .addEventListener("click", function (e) {
+                    if (e.target == document.querySelector(".black-bg")) {
+                        document
+                            .querySelector(".black-bg")
+                            .classList.remove("show-modal");
+                    }
+                });
+
+            $("#open").on("click", function () {
+                $(".black-bg").addClass("show-modal");
+            });
+
+            $("#close").on("click", function () {
+                $(".black-bg").removeClass("show-modal");
+            });
+
             $(".slide-1").on("click", function () {
                 $(".slide-container").css("transform", "translateX(0vw)");
             });
@@ -240,6 +268,29 @@
         <div class="alert alert-danger" id="timer">
             <span class="time">5</span>초 이내 구입시 사은품 증정!
         </div>
+        <div style="height: 1000px"></div>
+        <div
+            class="lorem"
+            style="width: 200px; height: 100px; overflow-y: scroll"
+        >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+            voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa
+            itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi
+            quae consectetur praesentium exercitationem.
+        </div>
+
+        <script>
+            $(".lorem").on("scroll", function () {
+                var scrollPo = $(".lorem").scrollTop();
+                var scrollHei = document.querySelector(".lorem").scrollHeight;
+                var clientHei = document.querySelector(".lorem").clientHeight;
+                var flag = 1;
+                if (scrollHei - (scrollPo + clientHei) < 3 && flag === 1) {
+                    alert("R U Sure?");
+                    flag = 0;
+                }
+            });
+        </script>
 
         <script>
             var cnt = 5;

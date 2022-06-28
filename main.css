@@ -1,6 +1,23 @@
 .show {
     display: block;
 }
+
+.prog {
+    width: 100%;
+    height: 1px;
+    background-color: red;
+    /* position: fixed; */
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+.navbar-brand {
+    font-size: 30px;
+    transition: all 0.5s;
+}
+
 .black-bg {
     width: 100%;
     height: 100%;
